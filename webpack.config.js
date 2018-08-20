@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -39,5 +41,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/public/index.html'
     })
-  ]
+  ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          output: {
+            comments: false
+          }
+        }
+      })
+    ]
+  }
 };
