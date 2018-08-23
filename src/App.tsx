@@ -4,13 +4,13 @@ import { Dispatch, bindActionCreators } from 'redux';
 import { addUsuario } from './usuario/actions.usuario';
 import { Usuario } from './models/models.usuario';
 import { AppState } from './app.state';
-import FormUsuario from './components/FormUsuario';
+import Header from './components/Header';
 
 class App extends React.Component {
   public render() {
     return (
       <div>
-        <FormUsuario />
+        <Header />
       </div>
     );
   }

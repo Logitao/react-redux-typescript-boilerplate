@@ -15,8 +15,10 @@ export interface AppState {
    * @memberof AppState
    */
   usuarios: Usuario[];
+  sidebar: boolean;
 }
 
 export const initialState: AppState = {
-  usuarios: []
+  usuarios: [],
+  sidebar: true
 };
