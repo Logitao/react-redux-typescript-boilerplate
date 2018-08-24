@@ -7,7 +7,7 @@ import { RouteObject } from '../models/models.routes';
  *
  * @interface Props
  */
-interface Props {
+interface IProps {
   /**
    *
    *
@@ -22,7 +22,7 @@ interface Props {
  *
  * @returns {JSX.Element} Rotas
  */
-export const Routes = (props: Props): JSX.Element => (
+export const Routes = (props: IProps): JSX.Element => (
   <>
     {props.routes.map((singleRoute, index) => (
       <Route

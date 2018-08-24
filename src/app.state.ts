@@ -1,4 +1,4 @@
-import { Usuario } from './models/models.usuario';
+import { ITodoItem } from './models/models.item';
 
 //Estrutura do Estado de Aplicação
 /**
@@ -7,18 +7,31 @@ import { Usuario } from './models/models.usuario';
  * @export
  * @interface AppState
  */
-export interface AppState {
-  /**
-   *
-   *
-   * @type {Usuario[]}
-   * @memberof AppState
-   */
-  usuarios: Usuario[];
-  sidebar: boolean;
+export interface IAppState {
+  todoItems: ITodoItem[];
 }
 
-export const initialState: AppState = {
-  usuarios: [],
-  sidebar: true
+export const initialState: IAppState = {
+  todoItems: [
+    {
+      label: 'todo1',
+      done: false
+    },
+    {
+      label: 'todo2',
+      done: true
+    },
+    {
+      label: 'todo3',
+      done: true
+    },
+    {
+      label: 'todo4',
+      done: true
+    },
+    {
+      label: 'todo5',
+      done: false
+    }
+  ]
 };

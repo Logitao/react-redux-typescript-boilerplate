@@ -1,44 +1,23 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
-import { addUsuario } from './usuario/actions.usuario';
-import { Usuario } from './models/models.usuario';
-import { AppState } from './app.state';
-import Header from './components/Header';
+import { IAppState } from './app.state';
+import FormTodo from './containers/FormTodo/FormTodo';
 
 class App extends React.Component {
   public render() {
     return (
       <div>
-        <Header />
+        <h1>TEST</h1>
+        <FormTodo />
       </div>
     );
   }
 }
 
-//Ações organizadas em um objeto
-const actions = {
-  addUsuario: (usuario: Usuario) => addUsuario(usuario)
-};
-
-//mapStateToProps mapeia o estado de aplicação para as propriedades do
-//componente
-/**
- * mapStateToProps
- *
- * @param {AppState} state
- */
-const mapStateToProps = (state: AppState) => ({
-  user: state.usuarios
-});
-
-/**
- * mapDispatchToProps
- *
- * @param {Dispatch} dispatch
- */
+const actions = {};
+const mapStateToProps = (state: IAppState) => ({});
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  //bindActionCreators autmaticamente aciona um dispatch em todas as ações
   ...bindActionCreators(
     {
       ...actions

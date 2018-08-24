@@ -1,14 +1,16 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": ["tslint:recommended"],
   "rules": {
     "member-access": false,
     "object-literal-sort-keys": false,
     "no-console": false,
     "ordered-imports": false,
-    "interface-name": false,
     "comment-format": false,
     "jsx-boolean-value": false,
-    "no-empty-interface": false
+    "no-empty-interface": false,
+    "quotemark": false,
+    "max-classes-per-file": false,
+    "trailing-comma": false
   },
   "linterOptions": {
     "exclude": [
