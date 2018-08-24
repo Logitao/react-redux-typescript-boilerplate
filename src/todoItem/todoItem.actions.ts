@@ -16,7 +16,7 @@ export interface IDeleteTodoAction extends Action {
 
 export const AddTodoAction: ActionCreator<IAddTodoAction> = (
   todo: ITodoItem
-) => ({
+): IAddTodoAction => ({
   type: '@@TODO/ADD_TODO',
   payload: {
     todo

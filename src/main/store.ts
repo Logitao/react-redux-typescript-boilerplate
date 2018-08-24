@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, Store } from 'redux';
+import { createStore, applyMiddleware, Store, Dispatch, Action } from 'redux';
 
 //Thunk é um middleware para promises
 import thunk from 'redux-thunk';
@@ -42,5 +42,14 @@ export default configureStore({
         done: false
       }
     ]
+  },
+  formTodo: {
+    text: ''
   }
 });
+
+export interface IConnectedReduxProps<S extends Action> {
+  // Correct types for the `dispatch` prop passed by `react-redux`.
+  // Additional type information is given through generics.
+  dispatch: Dispatch<S>;
+}
