@@ -1,26 +1,25 @@
-import { initialState, IAppState } from '../app.state';
-import { TodoActions, ADD_TODO } from './todoItem.actions';
+import { Reducer } from 'redux';
+import { ITodoState } from '../app.state';
+import { TodoActions } from './todoItem.actions';
 
-export const todoReducer = (
-  state = initialState,
+export const initialState: ITodoState = {
+  todoItems: []
+};
+
+const reducer: Reducer<ITodoState> = (
+  state: ITodoState = initialState,
   action: TodoActions
-): IAppState => {
+) => {
   switch (action.type) {
-    case ADD_TODO: {
-      const { label, done } = action.payload;
-      return {
-        ...state,
-        todoItems: [
-          ...state.todoItems,
-          {
-            label,
-            done
-          }
-        ]
-      };
+    case '@@TODO/ADD_TODO': {
+      return { ...state, todoItems: [...state.todoItems, action.payload.todo] };
     }
-
+    case '@@TODO/DELETE_TODO': {
+      return state;
+    }
     default:
       return state;
   }
 };
+
+export default reducer;

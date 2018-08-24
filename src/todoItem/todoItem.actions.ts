@@ -1,16 +1,35 @@
 import { ITodoItem } from '../models/models.item';
+import { Action, ActionCreator } from 'redux';
 
-export const ADD_TODO = '[TODO] ADD_TODO';
-export const DELETE_TODO = '[TODO] DELETE_TODO';
-
-class AddTodo {
-  readonly type = ADD_TODO;
-  constructor(public payload: ITodoItem) {}
+export interface IAddTodoAction extends Action {
+  type: '@@TODO/ADD_TODO';
+  payload: {
+    todo: ITodoItem;
+  };
+}
+export interface IDeleteTodoAction extends Action {
+  type: '@@TODO/DELETE_TODO';
+  payload: {
+    key: number;
+  };
 }
 
-class DeleteTodo {
-  readonly type = DELETE_TODO;
-  constructor(public payload: number) {}
-}
+export const AddTodoAction: ActionCreator<IAddTodoAction> = (
+  todo: ITodoItem
+) => ({
+  type: '@@TODO/ADD_TODO',
+  payload: {
+    todo
+  }
+});
 
-export type TodoActions = AddTodo | DeleteTodo;
+export const DeleteTodoAction: ActionCreator<IDeleteTodoAction> = (
+  key: number
+) => ({
+  type: '@@TODO/DELETE_TODO',
+  payload: {
+    key
+  }
+});
+
+export type TodoActions = IDeleteTodoAction | IAddTodoAction;

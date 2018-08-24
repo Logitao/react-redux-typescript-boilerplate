@@ -13,7 +13,7 @@ interface IProps extends IStateProps {}
 const FormTodo: React.SFC<IProps> = (props: IProps) => (
   <div>
     <input type="text" />
-    <button onClick={() => console.log(props.todos.todoItems)}>Add</button>
+    <button onClick={() => console.log(props.todos)}>Add</button>
     {
       //props.todos.map((item, index) => (
       //<span key={index}>{item.label}</span>
