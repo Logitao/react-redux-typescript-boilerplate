@@ -7,14 +7,14 @@ import { Provider } from 'react-redux';
 import store from './main/store';
 import { Routes } from './main/main.routes';
 import { HashRouter } from 'react-router-dom';
-import { RouteObject } from './models/models.routes';
+import { IRouteObject } from './models/models.routes';
 /**
  * Constante de rotas
  * Onde todas as rotas e os componentes correspondentes ficam
  * @constant routes
- * @type {RouteObject[]}
+ * @type {IRouteObject[]}
  */
-const routes: RouteObject[] = [
+const routes: IRouteObject[] = [
   {
     path: '/',
     component: App

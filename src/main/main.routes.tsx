@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Route } from 'react-router-dom';
-import { RouteObject } from '../models/models.routes';
+import { IRouteObject } from '../models/models.routes';
 
 /**
  *
@@ -11,10 +11,10 @@ interface IProps {
   /**
    *
    *
-   * @type {RouteObject[]}
+   * @type {IRouteObject[]}
    * @memberof Props
    */
-  routes: RouteObject[];
+  routes: IRouteObject[];
 }
 
 /**
